@@ -111,7 +111,7 @@ links.connect = [
   { name = "twitter" , url = "https://twitter.com/pitayanblog" },
   { name = "github", url = "https://github.com/Pitayan" },
   { name = "email", url = "mailto:pitayanblog@gmail.com" },
-  { name = "rss", url = "/rss.xml" },
+  { name = "rss", url = "/atom.xml" },
 ]
 
 sns.twitter = "https://twitter.com/pitayanblog"
