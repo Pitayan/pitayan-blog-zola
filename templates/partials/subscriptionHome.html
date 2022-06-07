@@ -1,0 +1,8 @@
+<div class="subscription">
+	<div class="subscription-container">
+		<div class="subscription-content w-full flex flex-wrap justify-between items-center">
+      {{subscriptionForm::render(mailchimp_endpoint=config.extra.mailchimp_endpoint | safe, class="grow max-w-lg")}}
+      <span class="text-gray-700 dark:text-gray-100 block text-[85%] p-4 w-96 mr-auto">Get our email newsletter with the ability to opt-out anytime. No sharing to 3rd party or spamming.</span>
+    </div>
+  </div>
+</div>

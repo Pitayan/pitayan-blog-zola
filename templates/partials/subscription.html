@@ -1,0 +1,8 @@
+<div class="subscription">
+	<div class="subscription-container">
+    <h1 class="subscription-title">Subscribe to <b class="font-black">new posts</b></h1>
+		<div class="subscription-content w-full max-w-lg">
+      {{subscriptionForm::render(mailchimp_endpoint=config.extra.mailchimp_endpoint | safe)}}
+		</div>
+  </div>
+</div>

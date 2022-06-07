@@ -1,0 +1,91 @@
+{# Title #}
+{% set title = config.title %}
+{% if section.title %}
+  {% set title = section.title ~ " | " ~ config.title %}
+{% elif page.title %}
+  {% set title = page.title ~ " | " ~ config.title %}
+{% elif taxonomy.name %}
+  {% set page_name = taxonomy.name | capitalize %}
+  {% set title = page_name ~ " | " ~ config.title %}
+{% elif paginator.title %}
+  {% set title = paginator.title ~ " | " ~ config.title %}
+{% endif %}
+
+{# Description #}
+{% set description = config.description %}
+{% if page.description %}
+  {% set description = page.description %}
+{% endif %}
+
+{# Reading time #}
+{% set reading_time = "" %}
+{% if section.reading_time %}
+  {% set reading_time = section.reading_time %}
+{% elif page.reading_time %}
+  {% set reading_time = page.reading_time %}
+{% endif %}
+
+{# Twitter #}
+{% set twitter = config.extra.sns.twitter %}
+
+{% set url = config.base_url %}
+{% if section.permalink %}
+  {% set url = section.permalink %}
+{% elif page.permalink %}
+  {% set url = page.permalink %}
+{% endif %}
+
+{% set cover_image_url = config.base_url ~ "/" ~ config.extra.site_cover %}
+{% if page.extra.image %}
+  {% set page_path = page.relative_path | split(pat="/") %}
+  {% set cover_image_url = page_path[0] ~ "/" ~ page_path[1] ~ "/" ~ page.extra.image %}
+{% endif %}
+
+
+<head>
+  {% block title %}
+    <title>{{title}}</title>
+  {% endblock title %}
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Required SEO tags -->
+
+  {% block meta %}
+    {% include "partials/meta.html" %}
+  {% endblock meta %}
+
+  {% block schema %}
+    {% include "partials/schema.html" %}
+  {% endblock schema %}
+
+  <!-- **** BEGINNING, favicons **** -->
+
+  <!-- generics -->
+
+  <!-- iOS -->
+
+  <!-- Android -->
+
+  <!-- Windows 8, IE 10 -->
+
+  <!-- Windows 8.1 and up, IE 11 -->
+
+  <!-- **** CONCLUSION, favicons **** -->
+
+  <!-- CSS/SCSS -->
+  <link rel="stylesheet" href="{{ get_url(path="css/style.css", trailing_slash=false, cachebust=true) | safe }}" />  
+  <style>@-moz-document url-prefix() {.lazy:-moz-loading {visibility:hidden;}}.ieOnly {display: none;}@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {.ieOnly {display: block;}}</style>
+
+  <!-- Toggle Theme -->
+  <script type="text/javascript">
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+  
+</head>
