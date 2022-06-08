@@ -423,6 +423,6 @@ Thank you reading!
 
 
 ## References
-- https://vuejs.org
-- https://www.digitalocean.com/community/tutorials/vuejs-add-v-model-support
-- https://vue-loader.vuejs.org/guide/scoped-css.html#child-component-root-elements
+- [https://vuejs.org](https://vuejs.org)
+- [https://www.digitalocean.com/community/tutorials/vuejs-add-v-model-support](https://www.digitalocean.com/community/tutorials/vuejs-add-v-model-support)
+- [https://vue-loader.vuejs.org/guide/scoped-css.html#child-component-root-elements](https://vue-loader.vuejs.org/guide/scoped-css.html#child-component-root-elements)

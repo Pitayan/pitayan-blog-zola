@@ -101,7 +101,7 @@ The stackoverflow's answer seems quite simple, however in fact it uses an algori
 >
 > -- <cite>**From [Wikipedia](https://en.wikipedia.org/wiki/Fisher–Yates_shuffle)**</cite>
 
-There's an old blog article that visualizes the shuffle algorithm. https://bost.ocks.org/mike/shuffle/
+There's an old blog article that visualizes the shuffle algorithm. [https://bost.ocks.org/mike/shuffle/](https://bost.ocks.org/mike/shuffle/)
 
 The `shuffle` function is a description of the algorithm.
 
@@ -141,7 +141,7 @@ There are some honorable alternatives to the solution I found on [stackoverflow]
 #### The Durstenfeld Shuffle
 This solution appears on the [stackoverflow](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array) page. I found a gist memo in the end.
 
-https://gist.github.com/webbower/8d19b714ded3ec53d1d7ed32b79fdbac
+[https://gist.github.com/webbower/8d19b714ded3ec53d1d7ed32b79fdbac](https://gist.github.com/webbower/8d19b714ded3ec53d1d7ed32b79fdbac)
 
 ```js
 // Pre-ES6
