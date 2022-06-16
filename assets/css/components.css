@@ -226,7 +226,6 @@
 .drawer {
   @apply fixed;
   @apply hidden;
-  @apply overflow-scroll;
   @apply z-0;
 
   &-container {
@@ -259,7 +258,7 @@
     @apply block;
     @apply z-40;
 
-    .$(drawer)-container {
+    .drawer-container {
       @apply z-50;
     }
   }
