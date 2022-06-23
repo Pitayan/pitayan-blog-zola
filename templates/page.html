@@ -131,23 +131,34 @@
 
 <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-36">
   {% if page.taxonomies.categories %}
-    {% set_global related_posts = all_posts | slice(end=4) | sort(attribute="date") | reverse %}
+    {% set_global related_posts = [] %}
     {% for post in all_posts %}
       {% if post.title != page.title %}
         {% for category in page.taxonomies.categories %}
           {% if category in post.taxonomies.categories %}
-            {% set_global related_posts = [post] | concat(with=related_posts) | slice(end=4) %}
+            {% set_global related_posts = related_posts | concat(with=post) | slice(end=4) %}
           {% endif %}
         {% endfor %}
       {% endif %}
     {% endfor %}
+    {% set_global related_posts = related_posts | concat(with=all_posts) | unique(attribute="title") %}
+    {% set_global slice_index = 4 %}
     {% for post in related_posts %}
+      {# Skip the post under same title #}
+      {% if post.title == page.title %}
+        {% set_global slice_index = 5 %}
+        {% continue %}
+      {% endif %}
+
       {{postItem::render(
         post=post,
         display_categories=false,
         display_meta=false,
         display_description=false
       )}}
+
+      {# quit iteration after 4 / 5 items displayed #}
+      {% if loop.index == slice_index %}{% break %}{% endif %}
     {% endfor %}
   {% endif %}
 </div>
