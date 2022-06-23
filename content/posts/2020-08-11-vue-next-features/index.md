@@ -7,8 +7,8 @@ taxonomies:
   authors: 
     - Yanze Dai
   categories:
-    - Javascript
     - Vue
+    - Javascript
 extra:
   keywords: vue next,vue 3,vue features
   image: ./images/cover_image.png
