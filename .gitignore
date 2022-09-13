@@ -105,6 +105,7 @@ dist
 
 # Zola cache
 public
+themes
 
 # Mac cache
 .DS_Store
