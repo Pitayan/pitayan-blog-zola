@@ -10,6 +10,8 @@ taxonomies = [
   { name = "authors", paginate_by = 12 },
 ]
 
+theme = "zola-theme-pitayan"
+
 # When set to "true", a feed is automatically generated.
 generate_feed = true
 
