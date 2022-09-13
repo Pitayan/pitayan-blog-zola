@@ -1,0 +1,3 @@
+[submodule "themes/zola-theme-pitayan"]
+	path = themes/zola-theme-pitayan
+	url = https://github.com/Pitayan/zola-theme-pitayan
